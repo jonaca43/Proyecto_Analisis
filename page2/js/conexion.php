@@ -1,13 +1,16 @@
 <?php
-// Datos de acceso a la base de datos
-$servername = "localhost"; // Dirección del servidor de la base de datos (puede variar)
-$username = "root"; // Nombre de usuario de la base de datos
-$password = ""; // Contraseña del usuario de la base de datos
-$dbname = "mini"; // Nombre de la base de datos que deseas conectar
+// conexion.php
 
-$conecta = mysqli_connect($servername,$username,$password,$dbname);
- if($conecta-> connect_error){
-    die("error".$conecta->connect_error);
+$host = "localhost";
+$usuario = "root";
+$contrasena = "";
+$bd = "usuarios";
 
- }
+$conexion = mysqli_connect($host, $usuario, $contrasena, $bd);
+
+// Verificar conexión
+if (!$conexion) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+
 ?>
